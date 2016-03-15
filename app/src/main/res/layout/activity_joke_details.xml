@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/chuck_image_height"
+            android:background="@drawable/background">
+
+            <ImageView
+                android:id="@+id/random_joke_favorite"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/favorite_icon_margin_random_joke"
+                android:layout_width="@dimen/favorite_icon_height_width_random_joke"
+                android:layout_height="@dimen/favorite_icon_height_width_random_joke"
+                android:background="@drawable/ic_favourite_negative"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/random_joke_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/joke_text_height_random_joke"
+            android:layout_margin="@dimen/joke_text_margin_random_joke"
+            android:textSize="@dimen/joke_text_size_random_joke"
+            android:textColor="@color/joke_text_color"
+            android:gravity="center"
+            tools:text="Chuck Norris doesn't need a debugger, he just stares down the bug until the code confesses."/>
+
+    </LinearLayout>
+</FrameLayout>

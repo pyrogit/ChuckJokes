@@ -1,0 +1,147 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+//    androidBuildToolsVersion = "21.1.2"
+//    androidMinSdkVersion = 15
+//    androidTargetSdkVersion = 21
+//    androidCompileSdkVersion = 21
+
+    //Libraries
+    aptVersion = '1.4'
+    daggerVersion = '2.0'
+    butterKnifeVersion = '7.0.1'
+    simplexmlVersion = '2.7.1'
+//    recyclerViewVersion = '21.0.3'
+    rxJavaVersion = '1.0.13'
+    rxAndroidVersion = '0.25.0'
+    javaxAnnotationVersion = '10.0-b28'
+//    gsonVersion = '2.3'
+    okHttpVersion = '2.5.0'
+    retrofitVersion = '1.9.0'
+    appCompatVersion = '22.2.0'
+    pagingListViewVersion = '1.2'
+    glideVersion = '3.6.1'
+    googleAnalyticsVersion = '7.5.0'
+    gsonVersion = '2.3'
+    androidAnnotationsVersion = '20.0.0'
+    autoValueVersion = '1.1'
+    annimonLightweightStreamApiVersion = '1.0.2'
+    retrolambdaVersion = '3.2.0'
+    multidexVersion = '1.0.0'
+    dbFlowVersion = '2.2.1'
+    ottoVersion = '1.3.8'
+    jsoupVersion = '1.8.3'
+    showcaseVersion = '5.3.0'
+
+    //Testing
+//    robolectricVersion = '3.0'
+    jUnitVersion = '4.12'
+//    assertJVersion = '1.7.1'
+    mockitoVersion = '1.10.19'
+    dexmakerVersion = '1.4'
+    espressoVersion = '2.2'
+    runnerVersion = '0.3'
+    rulesVersion = '0.3'
+    automatorVersion = '2.1.1'
+
+    presentationDependencies = [
+            apt                        : "com.neenbedankt.gradle.plugins:android-apt:${aptVersion}",
+            daggerCompiler             : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger                     : "com.google.dagger:dagger:${daggerVersion}",
+            butterKnife                : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            okHttp                     : "com.squareup.okhttp:okhttp:${okHttpVersion}",
+            retrofit                   : "com.squareup.retrofit:retrofit:${retrofitVersion}",
+            appcompat                  : "com.android.support:appcompat-v7:${appCompatVersion}",
+            pagingListView             : "com.github.nicolasjafelle:paginglistview:${pagingListViewVersion}",
+            glide                      : "com.github.bumptech.glide:glide:${glideVersion}",
+//            playServices               : "com.google.android.gms:play-services:${playServicesVersion}",
+            otto                       : "com.squareup:otto:${ottoVersion}",
+            rxJava                     : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid                  : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation            : "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+            multidex                   : "com.android.support:multidex:${multidexVersion}",
+            retrolambda                : "me.tatarka:gradle-retrolambda:${retrolambdaVersion}",
+            annimonLightweightStreamApi: "com.annimon:stream:${annimonLightweightStreamApiVersion}",
+            jsoup                      : "org.jsoup:jsoup:${jsoupVersion}",
+            showcase                   : "com.github.amlcurran.showcaseview:library:${showcaseVersion}",
+    ]
+
+    presentationTestDependencies = [
+            dexmaker       : "com.crittercism.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerdx     : "com.crittercism.dexmaker:dexmaker-dx:${dexmakerVersion}",
+            dexmakerMockito: "com.crittercism.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            mockito        : "org.mockito:mockito-core:${mockitoVersion}",
+            espresso       : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            runner         : "com.android.support.test:runner:${runnerVersion}",
+            rules          : "com.android.support.test:rules:${rulesVersion}",
+            automator      : "com.android.support.test.uiautomator:uiautomator-v18:${automatorVersion}",
+    ]
+
+    domainDependencies = [
+            autoValue                  : "com.google.auto.value:auto-value:${autoValueVersion}",
+            daggerCompiler             : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger                     : "com.google.dagger:dagger:${daggerVersion}",
+            rxJava                     : "io.reactivex:rxjava:${rxJavaVersion}",
+            retrolambda                : "me.tatarka:gradle-retrolambda:${retrolambdaVersion}",
+            annimonLightweightStreamApi: "com.annimon:stream:${annimonLightweightStreamApiVersion}",
+            javaxAnnotation            : "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+    ]
+
+    domainTestDependencies = [
+            junit  : "junit:junit:${jUnitVersion}",
+            mockito: "org.mockito:mockito-core:${mockitoVersion}",
+    ]
+
+    dataDependencies = [
+            apt                        : "com.neenbedankt.gradle.plugins:android-apt:${aptVersion}",
+            retrolambda                : "me.tatarka:gradle-retrolambda:${retrolambdaVersion}",
+            daggerCompiler             : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger                     : "com.google.dagger:dagger:${daggerVersion}",
+            gson                       : "com.google.code.gson:gson:${gsonVersion}",
+            okHttp                     : "com.squareup.okhttp:okhttp:${okHttpVersion}",
+            gson                       : "com.google.code.gson:gson:${gsonVersion}",
+            rxJava                     : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid                  : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation            : "org.glassfish:javax.annotation:${javaxAnnotationVersion}",
+            annimonLightweightStreamApi: "com.annimon:stream:${annimonLightweightStreamApiVersion}",
+            retrofit                   : "com.squareup.retrofit:retrofit:${retrofitVersion}",
+            simpleXml                  : "org.simpleframework:simple-xml:${simplexmlVersion}",
+//            androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}"
+            dbFlow                     : "com.raizlabs.android:DBFlow:${dbFlowVersion}",
+            dbFlowCore                 : "com.raizlabs.android:DBFlow-Core:${dbFlowVersion}",
+            dbFlowCompiler             : "com.raizlabs.android:DBFlow-Compiler:${dbFlowVersion}",
+            googleAnalytics            : "com.google.android.gms:play-services-analytics:${googleAnalyticsVersion}",
+            appcompat                  : "com.android.support:appcompat-v7:${appCompatVersion}",
+    ]
+
+    dataTestDependencies = [
+            runner         : "com.android.support.test:runner:${runnerVersion}",
+//            junit  : "junit:junit:${jUnitVersion}",
+//            assertj:            "org.assertj:assertj-core:${assertJVersion}",
+            dexmaker       : "com.crittercism.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito: "com.crittercism.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            dexmakerdx     : "com.crittercism.dexmaker:dexmaker-dx:${dexmakerVersion}",
+            mockito        : "org.mockito:mockito-core:${mockitoVersion}",
+//            espresso       : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+//            robolectric:        "org.robolectric:robolectric:${robolectricVersion}",
+    ]
+
+    advertisingSdkDependencies = [
+            appcompat                  : "com.android.support:appcompat-v7:${appCompatVersion}",
+            autoValue                  : "com.google.auto.value:auto-value:${autoValueVersion}",
+    ]
+
+    advertisingSdkTestDependencies = [
+            junit          : "junit:junit:${jUnitVersion}",
+            dexmaker       : "com.crittercism.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito: "com.crittercism.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            dexmakerdx     : "com.crittercism.dexmaker:dexmaker-dx:${dexmakerVersion}",
+            mockito        : "org.mockito:mockito-core:${mockitoVersion}",
+            runner         : "com.android.support.test:runner:${runnerVersion}",
+    ]
+}
