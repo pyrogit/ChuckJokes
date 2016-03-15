@@ -22,7 +22,7 @@ import hr.pyro.chuckjokes.presentation.di.module.UtilsModule;
                 UtilsModule.class
         }
 )
-public interface ApplicationComponent extends ApplicationComponentExposes, ApplicationComponentInjects{
+public interface ApplicationComponent extends ApplicationComponentExposes, ApplicationComponentInjects {
 
     /**
      * An initializer that creates the graph from an application.

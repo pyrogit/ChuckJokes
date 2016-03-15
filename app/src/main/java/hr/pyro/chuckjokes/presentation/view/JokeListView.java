@@ -7,7 +7,7 @@ import hr.pyro.chuckjokes.presentation.model.JokeViewModel;
 /**
  * Created on 11.03.16..
  */
-public interface JokeListView extends BaseView{
+public interface JokeListView extends BaseView {
 
     void renderFavoriteJokes(List<JokeViewModel> jokes);
 }

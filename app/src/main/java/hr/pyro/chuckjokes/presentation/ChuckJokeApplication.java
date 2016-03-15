@@ -13,7 +13,7 @@ public class ChuckJokeApplication extends Application {
     private static ChuckJokeApplication instance = null;
     private ApplicationComponent applicationComponent;
 
-    public ChuckJokeApplication(){
+    public ChuckJokeApplication() {
         instance = this;
     }
 
@@ -24,7 +24,7 @@ public class ChuckJokeApplication extends Application {
         applicationComponent.inject(this);
     }
 
-    public static ChuckJokeApplication getInstance(){
+    public static ChuckJokeApplication getInstance() {
         return instance;
     }
 

@@ -9,7 +9,7 @@ public interface JokeListActivityPresenter extends ScopedPresenter {
 
     void requestFavoriteJokes();
 
-    void  showDetailsJoke(int id);
+    void showDetailsJoke(int id);
 
     void activate(JokeListView view);
 }

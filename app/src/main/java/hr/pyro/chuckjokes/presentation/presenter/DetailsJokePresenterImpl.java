@@ -57,20 +57,20 @@ public final class DetailsJokePresenterImpl extends BasePresenter implements Det
     }
 
     @Override
-    public void activate(final DetailsJokeView view){
+    public void activate(final DetailsJokeView view) {
         this.view = new WeakReference<>(view);
     }
 
-    private void renderJoke(@NonNull final JokeViewModel joke){
+    private void renderJoke(@NonNull final JokeViewModel joke) {
         final DetailsJokeView view = getView();
-        if(view != null && !JokeViewModel.EMPTY.equals(joke)){
+        if (view != null && !JokeViewModel.EMPTY.equals(joke)) {
             view.renderJoke(joke);
         }
     }
 
     @Override
     public void addToFavorites(@NonNull final JokeViewModel joke) {
-        if(!JokeDomainModel.EMPTY.equals(joke)){
+        if (!JokeDomainModel.EMPTY.equals(joke)) {
             addSubscription(Observable.defer(() ->
                     addJokeToFavoritesUseCase.execute(
                             converter.viewModelToDomainModel(joke)))
@@ -86,8 +86,8 @@ public final class DetailsJokePresenterImpl extends BasePresenter implements Det
 
     @Override
     public void removeFromFavorites(@NonNull final JokeViewModel joke) {
-        if(!JokeDomainModel.EMPTY.equals(joke)){
-            addSubscription(Observable.defer(()->
+        if (!JokeDomainModel.EMPTY.equals(joke)) {
+            addSubscription(Observable.defer(() ->
                     deleteJokeUseCase.execute(
                             converter.viewModelToDomainModel(joke)))
                     .subscribeOn(Schedulers.io())
@@ -100,16 +100,16 @@ public final class DetailsJokePresenterImpl extends BasePresenter implements Det
         }
     }
 
-    private void addedToFavorites(final Long id){
+    private void addedToFavorites(final Long id) {
         final DetailsJokeView view = getView();
-        if(view != null){
+        if (view != null) {
             view.renderFavorite(true);
         }
     }
 
-    private void removedFromFavorites(final Integer affected){
+    private void removedFromFavorites(final Integer affected) {
         final DetailsJokeView view = getView();
-        if(view != null){
+        if (view != null) {
             view.renderFavorite(false);
         }
     }

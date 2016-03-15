@@ -30,7 +30,7 @@ public final class FavoriteJokesListAdapter extends ArrayAdapter<JokeViewModel> 
         this.presenter = presenter;
     }
 
-    public void setUpFavorites(final List<JokeViewModel> jokes){
+    public void setUpFavorites(final List<JokeViewModel> jokes) {
         clear();
         addAll(jokes);
     }
@@ -39,7 +39,7 @@ public final class FavoriteJokesListAdapter extends ArrayAdapter<JokeViewModel> 
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
 
-        if(convertView == null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_favorite_joke, parent, false);
             viewHolder = new ViewHolder(convertView, presenter);
             convertView.setTag(viewHolder);
@@ -52,7 +52,7 @@ public final class FavoriteJokesListAdapter extends ArrayAdapter<JokeViewModel> 
         return convertView;
     }
 
-    protected static class ViewHolder{
+    protected static class ViewHolder {
 
         @Bind(R.id.joke_text_item_favorite_joke)
         protected TextView jokeTextView;
@@ -60,20 +60,20 @@ public final class FavoriteJokesListAdapter extends ArrayAdapter<JokeViewModel> 
 
         private final WeakReference<JokeListActivityPresenter> presenterWeakReference;
 
-        ViewHolder(final View view, final JokeListActivityPresenter presenter){
+        ViewHolder(final View view, final JokeListActivityPresenter presenter) {
             ButterKnife.bind(this, view);
             presenterWeakReference = new WeakReference<>(presenter);
         }
 
-        void fillViews(final JokeViewModel joke){
+        void fillViews(final JokeViewModel joke) {
             jokeTextView.setText(joke.getJoke());
             this.joke = joke;
         }
 
         @OnClick(R.id.item_favorite_joke)
-        void itemClicked(){
+        void itemClicked() {
             final JokeListActivityPresenter presenter = presenterWeakReference.get();
-            if(presenter != null){
+            if (presenter != null) {
                 presenter.showDetailsJoke(joke.getId());
             }
         }

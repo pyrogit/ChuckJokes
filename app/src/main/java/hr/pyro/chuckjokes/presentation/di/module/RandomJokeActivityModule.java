@@ -2,10 +2,10 @@ package hr.pyro.chuckjokes.presentation.di.module;
 
 import dagger.Module;
 import dagger.Provides;
-import hr.pyro.chuckjokes.presentation.di.qualifier.ForActivity;
 import hr.pyro.chuckjokes.domain.interactor.AddJokeToFavoritesUseCase;
 import hr.pyro.chuckjokes.domain.interactor.DeleteJokeUseCase;
 import hr.pyro.chuckjokes.domain.interactor.FetchRandomJokeUseCase;
+import hr.pyro.chuckjokes.presentation.di.qualifier.ForActivity;
 import hr.pyro.chuckjokes.presentation.model.converter.JokeDomainModelViewModelConverter;
 import hr.pyro.chuckjokes.presentation.presenter.RandomJokePresenter;
 import hr.pyro.chuckjokes.presentation.presenter.RandomJokePresenterImpl;
@@ -25,7 +25,7 @@ public final class RandomJokeActivityModule {
                                          final JokeDomainModelViewModelConverter converter,
                                          final FetchRandomJokeUseCase fetchRandomJokeUseCase,
                                          final DeleteJokeUseCase deleteJokeUseCase,
-                                         final AddJokeToFavoritesUseCase addJokeToFavoritesUseCase){
+                                         final AddJokeToFavoritesUseCase addJokeToFavoritesUseCase) {
         return new RandomJokePresenterImpl(errorMessageFactory, router, converter,
                 addJokeToFavoritesUseCase, deleteJokeUseCase, fetchRandomJokeUseCase);
     }

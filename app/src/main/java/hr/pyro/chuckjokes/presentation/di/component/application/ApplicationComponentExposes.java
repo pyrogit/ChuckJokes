@@ -9,8 +9,8 @@ import hr.pyro.chuckjokes.domain.interactor.AddJokeToFavoritesUseCase;
 import hr.pyro.chuckjokes.domain.interactor.DeleteJokeUseCase;
 import hr.pyro.chuckjokes.domain.interactor.FetchFavoriteJokesUseCase;
 import hr.pyro.chuckjokes.domain.interactor.FetchRandomJokeUseCase;
-import hr.pyro.chuckjokes.presentation.di.qualifier.ForApplication;
 import hr.pyro.chuckjokes.domain.repository.JokeRepository;
+import hr.pyro.chuckjokes.presentation.di.qualifier.ForApplication;
 import hr.pyro.chuckjokes.presentation.model.converter.JokeDomainModelViewModelConverter;
 import hr.pyro.chuckjokes.presentation.util.ErrorMessageFactory;
 

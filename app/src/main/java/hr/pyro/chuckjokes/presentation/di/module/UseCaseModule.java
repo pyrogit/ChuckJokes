@@ -19,31 +19,31 @@ public final class UseCaseModule {
 
     @Provides
     @Singleton
-    AddJokeToFavoritesUseCase provideAddJokeToFavoritesUseCase(JokeRepository jokeRepository){
+    AddJokeToFavoritesUseCase provideAddJokeToFavoritesUseCase(JokeRepository jokeRepository) {
         return new AddJokeToFavoritesUseCase(jokeRepository);
     }
 
     @Provides
     @Singleton
-    DeleteJokeUseCase provideDeleteJokeUseCase(JokeRepository jokeRepository){
+    DeleteJokeUseCase provideDeleteJokeUseCase(JokeRepository jokeRepository) {
         return new DeleteJokeUseCase(jokeRepository);
     }
 
     @Provides
     @Singleton
-    FetchFavoriteJokesUseCase provideFetchFavoriteJokesUseCase(JokeRepository jokeRepository){
+    FetchFavoriteJokesUseCase provideFetchFavoriteJokesUseCase(JokeRepository jokeRepository) {
         return new FetchFavoriteJokesUseCase(jokeRepository);
     }
 
     @Provides
     @Singleton
-    FetchRandomJokeUseCase provideFetchRandomJokeUseCase(JokeRepository jokeRepository){
+    FetchRandomJokeUseCase provideFetchRandomJokeUseCase(JokeRepository jokeRepository) {
         return new FetchRandomJokeUseCase(jokeRepository);
     }
 
     @Provides
     @Singleton
-    FetchJokeUseCase provideFetchJokeUseCase(JokeRepository jokeRepository){
+    FetchJokeUseCase provideFetchJokeUseCase(JokeRepository jokeRepository) {
         return new FetchJokeUseCase(jokeRepository);
     }
 }

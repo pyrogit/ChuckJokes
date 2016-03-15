@@ -17,8 +17,8 @@ import hr.pyro.chuckjokes.domain.model.JokeDomainModel;
  */
 public final class JokeDataEntityDomainModelMapper {
 
-    public JokeDomainModel transformFromEntityToModel(final JokeEntity entity){
-        if(entity == null){
+    public JokeDomainModel transformFromEntityToModel(final JokeEntity entity) {
+        if (entity == null) {
             return JokeDomainModel.EMPTY;
         }
         return JokeDomainModel.create()
@@ -29,8 +29,8 @@ public final class JokeDataEntityDomainModelMapper {
     }
 
 
-    public JokeDomainModel transformFromApiEntityToModel(final JokeApiEntity entity){
-        if(entity == null){
+    public JokeDomainModel transformFromApiEntityToModel(final JokeApiEntity entity) {
+        if (entity == null) {
             return JokeDomainModel.EMPTY;
         }
         return JokeDomainModel.create()
@@ -40,8 +40,8 @@ public final class JokeDataEntityDomainModelMapper {
                 .build();
     }
 
-    public JokeEntity transformFromModelToEntity(JokeDomainModel model){
-        if(model == null || model.equals(JokeDomainModel.EMPTY)){
+    public JokeEntity transformFromModelToEntity(JokeDomainModel model) {
+        if (model == null || model.equals(JokeDomainModel.EMPTY)) {
             return null;
         }
         JokeEntity entity = new JokeEntity();
@@ -51,8 +51,8 @@ public final class JokeDataEntityDomainModelMapper {
         return entity;
     }
 
-    public List<JokeDomainModel> transformFromEntityToModel(List<JokeEntity> entities){
-        if(entities == null || entities.isEmpty()){
+    public List<JokeDomainModel> transformFromEntityToModel(List<JokeEntity> entities) {
+        if (entities == null || entities.isEmpty()) {
             return Collections.EMPTY_LIST;
         }
         return Stream.of(entities)

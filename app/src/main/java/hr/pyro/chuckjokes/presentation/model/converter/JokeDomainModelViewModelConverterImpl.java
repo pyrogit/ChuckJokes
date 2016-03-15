@@ -13,13 +13,13 @@ import hr.pyro.chuckjokes.presentation.model.JokeViewModel;
  */
 public final class JokeDomainModelViewModelConverterImpl implements JokeDomainModelViewModelConverter {
 
-//    @Inject//TODO
-    public JokeDomainModelViewModelConverterImpl(){
+    //    @Inject//TODO
+    public JokeDomainModelViewModelConverterImpl() {
     }
 
     @Override
     public JokeViewModel domainModelToViewModel(final JokeDomainModel jokeDomainModel) {
-        if(jokeDomainModel == null || JokeDomainModel.EMPTY.equals(jokeDomainModel)){
+        if (jokeDomainModel == null || JokeDomainModel.EMPTY.equals(jokeDomainModel)) {
             return JokeViewModel.EMPTY;
         }
         return new JokeViewModel(jokeDomainModel.id, jokeDomainModel.joke, jokeDomainModel.isFavorite);
@@ -27,7 +27,7 @@ public final class JokeDomainModelViewModelConverterImpl implements JokeDomainMo
 
     @Override
     public JokeDomainModel viewModelToDomainModel(final JokeViewModel jokeViewModel) {
-        if(jokeViewModel == null || JokeViewModel.EMPTY.equals(jokeViewModel)){
+        if (jokeViewModel == null || JokeViewModel.EMPTY.equals(jokeViewModel)) {
             return JokeDomainModel.EMPTY;
         }
         return JokeDomainModel.create()

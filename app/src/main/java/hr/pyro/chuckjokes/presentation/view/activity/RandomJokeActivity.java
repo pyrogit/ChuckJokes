@@ -61,13 +61,13 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
     }
 
     @OnClick(R.id.random_joke_random_button)
-    public void randomJokeButtonClicked(){
+    public void randomJokeButtonClicked() {
         presenter.requestRandomJoke();
     }
 
     @OnClick(R.id.random_joke_favorite)
-    public void favoriteIconClicked(){
-        if(joke.isFavorite()){
+    public void favoriteIconClicked() {
+        if (joke.isFavorite()) {
             presenter.removeFromFavorites(joke);
         } else {
             presenter.addToFavorites(joke);
@@ -75,7 +75,7 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
     }
 
     @OnClick(R.id.random_joke_my_favorites)
-    public void myFavoritesClicked(){
+    public void myFavoritesClicked() {
         presenter.showFavoriteJokes();
     }
 
@@ -86,8 +86,8 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
         toggleFavorite(joke.isFavorite());
     }
 
-    private void toggleFavorite(final boolean isFavorite){
-        if(isFavorite){
+    private void toggleFavorite(final boolean isFavorite) {
+        if (isFavorite) {
             favoriteButton.setImageResource(R.drawable.ic_favourite_positive);
         } else {
             favoriteButton.setImageResource(R.drawable.ic_favourite_negative);
@@ -103,7 +103,7 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
     @Override
     public void showLoading() {
         progressBar.setVisibility(View.VISIBLE);//TODO fix progressbar
-        Log.d("PROGRESS","VISIBLE");
+        Log.d("PROGRESS", "VISIBLE");
     }
 
     @Override

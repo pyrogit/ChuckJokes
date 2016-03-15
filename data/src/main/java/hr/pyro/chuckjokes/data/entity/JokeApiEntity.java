@@ -15,7 +15,7 @@ public final class JokeApiEntity {
         return value;
     }
 
-    public class Value{
+    public class Value {
         private int id;
         private String joke;
 

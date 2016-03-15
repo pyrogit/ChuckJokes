@@ -66,9 +66,9 @@ public final class JokeListActivityPresenterImpl extends BasePresenter implement
         this.view = new WeakReference<>(view);
     }
 
-    private void renderFavoriteJokes(final List<JokeViewModel> jokes){
+    private void renderFavoriteJokes(final List<JokeViewModel> jokes) {
         final JokeListView view = getView();
-        if(view != null && !jokes.isEmpty()){
+        if (view != null && !jokes.isEmpty()) {
             view.renderFavoriteJokes(jokes);
         }
     }

@@ -23,13 +23,13 @@ public final class ComponentFactory {
         return ApplicationComponent.Initializer.init(application);
     }
 
-        public static ActivityComponent createActivityComponent(final InjectorActivity activity) {
-            return DaggerActivityComponent.builder()
-                    .applicationComponent(ChuckJokeApplication.getInstance().getApplicationComponent())
-                    .activityModule(new ActivityModule(activity))
-                    .detailsJokeActivityModule(new DetailsJokeActivityModule())
-                    .jokeListActivityModule(new JokeListActivityModule())
-                    .randomJokeActivityModule(new RandomJokeActivityModule())
-                    .build();
+    public static ActivityComponent createActivityComponent(final InjectorActivity activity) {
+        return DaggerActivityComponent.builder()
+                .applicationComponent(ChuckJokeApplication.getInstance().getApplicationComponent())
+                .activityModule(new ActivityModule(activity))
+                .detailsJokeActivityModule(new DetailsJokeActivityModule())
+                .jokeListActivityModule(new JokeListActivityModule())
+                .randomJokeActivityModule(new RandomJokeActivityModule())
+                .build();
     }
 }

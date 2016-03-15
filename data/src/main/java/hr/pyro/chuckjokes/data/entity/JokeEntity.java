@@ -13,9 +13,12 @@ public final class JokeEntity {
     public static final String COLUMN_JOKE = "joke";
     public static final String COLUMN_FAVORITE = "favorite";
 
-    @Column(COLUMN_ID) private int id;
-    @Column(COLUMN_JOKE) private String joke;
-    @Column(COLUMN_FAVORITE) private boolean favorite;
+    @Column(COLUMN_ID)
+    private int id;
+    @Column(COLUMN_JOKE)
+    private String joke;
+    @Column(COLUMN_FAVORITE)
+    private boolean favorite;
 
     public int getId() {
         return id;

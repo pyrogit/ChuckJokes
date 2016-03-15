@@ -18,12 +18,12 @@ ext {
     simplexmlVersion = '2.7.1'
 //    recyclerViewVersion = '21.0.3'
     rxJavaVersion = '1.0.13'
-    rxAndroidVersion = '0.25.0'
+    rxAndroidVersion = '1.1.0'
     javaxAnnotationVersion = '10.0-b28'
 //    gsonVersion = '2.3'
     okHttpVersion = '2.5.0'
     retrofitVersion = '1.9.0'
-    appCompatVersion = '22.2.0'
+    appCompatVersion = '23.2.0'
     pagingListViewVersion = '1.2'
     glideVersion = '3.6.1'
     googleAnalyticsVersion = '7.5.0'
@@ -37,6 +37,7 @@ ext {
     ottoVersion = '1.3.8'
     jsoupVersion = '1.8.3'
     showcaseVersion = '5.3.0'
+    sqlbriteVersion = "0.6.0"
 
     //Testing
 //    robolectricVersion = '3.0'
@@ -111,37 +112,21 @@ ext {
             annimonLightweightStreamApi: "com.annimon:stream:${annimonLightweightStreamApiVersion}",
             retrofit                   : "com.squareup.retrofit:retrofit:${retrofitVersion}",
             simpleXml                  : "org.simpleframework:simple-xml:${simplexmlVersion}",
-//            androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}"
             dbFlow                     : "com.raizlabs.android:DBFlow:${dbFlowVersion}",
             dbFlowCore                 : "com.raizlabs.android:DBFlow-Core:${dbFlowVersion}",
             dbFlowCompiler             : "com.raizlabs.android:DBFlow-Compiler:${dbFlowVersion}",
             googleAnalytics            : "com.google.android.gms:play-services-analytics:${googleAnalyticsVersion}",
             appcompat                  : "com.android.support:appcompat-v7:${appCompatVersion}",
+            sqlbriteDao         : "com.hannesdorfmann.sqlbrite:dao:${sqlbriteVersion}",
+            sqlbriteObjectMapper: "com.hannesdorfmann.sqlbrite:object-mapper:${sqlbriteVersion}",
     ]
 
     dataTestDependencies = [
             runner         : "com.android.support.test:runner:${runnerVersion}",
-//            junit  : "junit:junit:${jUnitVersion}",
-//            assertj:            "org.assertj:assertj-core:${assertJVersion}",
             dexmaker       : "com.crittercism.dexmaker:dexmaker:${dexmakerVersion}",
             dexmakerMockito: "com.crittercism.dexmaker:dexmaker-mockito:${dexmakerVersion}",
             dexmakerdx     : "com.crittercism.dexmaker:dexmaker-dx:${dexmakerVersion}",
             mockito        : "org.mockito:mockito-core:${mockitoVersion}",
-//            espresso       : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
-//            robolectric:        "org.robolectric:robolectric:${robolectricVersion}",
-    ]
 
-    advertisingSdkDependencies = [
-            appcompat                  : "com.android.support:appcompat-v7:${appCompatVersion}",
-            autoValue                  : "com.google.auto.value:auto-value:${autoValueVersion}",
-    ]
-
-    advertisingSdkTestDependencies = [
-            junit          : "junit:junit:${jUnitVersion}",
-            dexmaker       : "com.crittercism.dexmaker:dexmaker:${dexmakerVersion}",
-            dexmakerMockito: "com.crittercism.dexmaker:dexmaker-mockito:${dexmakerVersion}",
-            dexmakerdx     : "com.crittercism.dexmaker:dexmaker-dx:${dexmakerVersion}",
-            mockito        : "org.mockito:mockito-core:${mockitoVersion}",
-            runner         : "com.android.support.test:runner:${runnerVersion}",
     ]
 }

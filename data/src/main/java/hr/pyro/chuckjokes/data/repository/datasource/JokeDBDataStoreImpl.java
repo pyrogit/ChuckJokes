@@ -50,7 +50,7 @@ public final class JokeDBDataStoreImpl extends Dao implements JokeDBDataStore {
     @Override
     public Observable<JokeEntity> getJoke(final int id) {
         return query(SELECT(JokeEntity.COLUMN_ID, JokeEntity.COLUMN_JOKE, JokeEntity.COLUMN_FAVORITE)
-                .FROM(JokeEntity.TABLE_NAME).WHERE(JokeEntity.COLUMN_ID + " = "+id))
+                .FROM(JokeEntity.TABLE_NAME).WHERE(JokeEntity.COLUMN_ID + " = " + id))
                 .run().mapToOne(JokeEntityMapper.MAPPER);
     }
 
@@ -75,6 +75,6 @@ public final class JokeDBDataStoreImpl extends Dao implements JokeDBDataStore {
 
     @Override
     public Observable<Integer> deleteJoke(final int id) {
-        return delete(JokeEntity.TABLE_NAME, JokeEntity.COLUMN_ID+" = "+id);
+        return delete(JokeEntity.TABLE_NAME, JokeEntity.COLUMN_ID + " = " + id);
     }
 }

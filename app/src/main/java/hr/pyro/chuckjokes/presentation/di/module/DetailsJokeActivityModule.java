@@ -20,9 +20,9 @@ public final class DetailsJokeActivityModule {
     @Provides
     DetailsJokePresenter providePresenter(final ErrorMessageFactory errorMessageFactory,
                                           final JokeDomainModelViewModelConverter converter,
-                                         final FetchJokeUseCase fetchJokeUseCase,
-                                         final DeleteJokeUseCase deleteJokeUseCase,
-                                         final AddJokeToFavoritesUseCase addJokeToFavoritesUseCase){
+                                          final FetchJokeUseCase fetchJokeUseCase,
+                                          final DeleteJokeUseCase deleteJokeUseCase,
+                                          final AddJokeToFavoritesUseCase addJokeToFavoritesUseCase) {
         return new DetailsJokePresenterImpl(errorMessageFactory, addJokeToFavoritesUseCase,
                 deleteJokeUseCase, fetchJokeUseCase, converter);
     }

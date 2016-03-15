@@ -22,14 +22,14 @@ import hr.pyro.chuckjokes.presentation.view.DetailsJokeView;
 /**
  * Created on 13.03.16..
  */
-public final class JokeDetailsActivity extends InjectorActivity implements DetailsJokeView{
+public final class JokeDetailsActivity extends InjectorActivity implements DetailsJokeView {
 
     public final static int FAVORITE_TOOGLED = 8888;
 
     private final static String TAG = JokeDetailsActivity.class.getName();
     private static String JOKE_ID_EXTRA = "jokeid";
 
-    public static Intent createIntent(final Context context, final int jokeId){
+    public static Intent createIntent(final Context context, final int jokeId) {
         final Intent intent = new Intent(context, JokeDetailsActivity.class);
         intent.putExtra(JOKE_ID_EXTRA, jokeId);
         return intent;
@@ -74,15 +74,15 @@ public final class JokeDetailsActivity extends InjectorActivity implements Detai
 
     @Override
     public void onBackPressed() {
-        if(isFavoriteToggled){
+        if (isFavoriteToggled) {
             setResult(FAVORITE_TOOGLED);
         }
         super.onBackPressed();
     }
 
     @OnClick(R.id.random_joke_favorite)
-    public void favoriteIconClicked(){
-        if(joke.isFavorite()){
+    public void favoriteIconClicked() {
+        if (joke.isFavorite()) {
             presenter.removeFromFavorites(joke);
         } else {
             presenter.addToFavorites(joke);
@@ -96,8 +96,8 @@ public final class JokeDetailsActivity extends InjectorActivity implements Detai
         toggleFavorite(joke.isFavorite());
     }
 
-    private void toggleFavorite(final boolean isFavorite){
-        if(isFavorite){
+    private void toggleFavorite(final boolean isFavorite) {
+        if (isFavorite) {
             favoriteButton.setImageResource(R.drawable.ic_favourite_positive);
         } else {
             favoriteButton.setImageResource(R.drawable.ic_favourite_negative);

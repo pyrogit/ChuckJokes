@@ -22,11 +22,11 @@ import hr.pyro.chuckjokes.presentation.view.adapter.FavoriteJokesListAdapter;
 /**
  * Created on 11.03.16..
  */
-public final class FavoriteJokesActivity extends InjectorActivity implements JokeListView{
+public final class FavoriteJokesActivity extends InjectorActivity implements JokeListView {
 
     private final static String TAG = FavoriteJokesActivity.class.getName();
 
-    public static Intent createIntent(final Context context){
+    public static Intent createIntent(final Context context) {
         return new Intent(context, FavoriteJokesActivity.class);
     }
 

@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 
 import dagger.Module;
 import dagger.Provides;
+import hr.pyro.chuckjokes.presentation.di.qualifier.ForActivity;
+import hr.pyro.chuckjokes.presentation.di.scope.ActivityScope;
 import hr.pyro.chuckjokes.presentation.router.Router;
 import hr.pyro.chuckjokes.presentation.router.RouterImpl;
 import hr.pyro.chuckjokes.presentation.view.activity.InjectorActivity;
-import hr.pyro.chuckjokes.presentation.di.qualifier.ForActivity;
-import hr.pyro.chuckjokes.presentation.di.scope.ActivityScope;
 
 @Module
 public final class ActivityModule {
@@ -43,7 +43,7 @@ public final class ActivityModule {
     @Provides
     @ActivityScope
     @ForActivity
-    Router provideRouter(RouterImpl router){
+    Router provideRouter(RouterImpl router) {
         return router;
     }
 

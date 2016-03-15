@@ -14,6 +14,6 @@
         android:gravity="center"
         android:layout_margin="@dimen/joke_text_margin_item_favorite_joke"
         android:textColor="@color/joke_text_color"
-        tools:text="Chuck Norris doesn't need a debugger, he just stares down the bug until the code confesses."/>
+        tools:text="Chuck Norris doesn't need a debugger, he just stares down the bug until the code confesses." />
 
 </LinearLayout>

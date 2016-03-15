@@ -17,7 +17,7 @@ public final class ApplicationModule {
 
     private final ChuckJokeApplication application;
 
-    public ApplicationModule(final ChuckJokeApplication chuckJokeApplication){
+    public ApplicationModule(final ChuckJokeApplication chuckJokeApplication) {
         this.application = chuckJokeApplication;
     }
 

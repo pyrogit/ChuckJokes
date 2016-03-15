@@ -13,7 +13,7 @@ public final class JokeApiDataStoreImpl implements JokeApiDataStore {
 
     private final JokeServices jokeServices;
 
-    public JokeApiDataStoreImpl(){
+    public JokeApiDataStoreImpl() {
         final RestAdapter restAdapter = new RestAdapter.Builder().setEndpoint(Constants.JOKE_API_URL)
                 .setLogLevel(RestAdapter.LogLevel.FULL).build();
         jokeServices = restAdapter.create(JokeServices.class);

@@ -25,7 +25,7 @@ import rx.schedulers.Schedulers;
  */
 public final class RandomJokePresenterImpl extends BasePresenter implements RandomJokePresenter {
 
-    private  WeakReference<RandomJokeView> view;
+    private WeakReference<RandomJokeView> view;
     private final AddJokeToFavoritesUseCase addJokeToFavoritesUseCase;
     private final DeleteJokeUseCase deleteJokeUseCase;
     private final FetchRandomJokeUseCase fetchRandomJokeUseCase;
@@ -62,16 +62,16 @@ public final class RandomJokePresenterImpl extends BasePresenter implements Rand
                 ));
     }
 
-    private void renderJoke(@NonNull final JokeViewModel joke){
+    private void renderJoke(@NonNull final JokeViewModel joke) {
         final RandomJokeView view = getView();
-        if(view != null && !JokeDomainModel.EMPTY.equals(joke)){
+        if (view != null && !JokeDomainModel.EMPTY.equals(joke)) {
             view.renderJoke(joke);
         }
     }
 
     @Override
     public void addToFavorites(@NonNull final JokeViewModel joke) {
-        if(!JokeDomainModel.EMPTY.equals(joke)){
+        if (!JokeDomainModel.EMPTY.equals(joke)) {
             addSubscription(Observable.defer(() ->
                     addJokeToFavoritesUseCase.execute(
                             converter.viewModelToDomainModel(joke)))
@@ -87,8 +87,8 @@ public final class RandomJokePresenterImpl extends BasePresenter implements Rand
 
     @Override
     public void removeFromFavorites(@NonNull final JokeViewModel joke) {
-        if(!JokeDomainModel.EMPTY.equals(joke)){
-            addSubscription(Observable.defer(()->
+        if (!JokeDomainModel.EMPTY.equals(joke)) {
+            addSubscription(Observable.defer(() ->
                     deleteJokeUseCase.execute(
                             converter.viewModelToDomainModel(joke)))
                     .subscribeOn(Schedulers.io())
@@ -111,16 +111,16 @@ public final class RandomJokePresenterImpl extends BasePresenter implements Rand
         this.view = new WeakReference<RandomJokeView>(view);
     }
 
-    private void addedToFavorites(final Long id){
+    private void addedToFavorites(final Long id) {
         final RandomJokeView view = getView();
-        if(view != null){
+        if (view != null) {
             view.renderFavorite(true);
         }
     }
 
-    private void removedFromFavorites(final Integer affected){
+    private void removedFromFavorites(final Integer affected) {
         final RandomJokeView view = getView();
-        if(view != null){
+        if (view != null) {
             view.renderFavorite(false);
         }
     }

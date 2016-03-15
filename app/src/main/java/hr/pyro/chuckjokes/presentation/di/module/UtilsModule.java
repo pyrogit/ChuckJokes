@@ -15,7 +15,7 @@ public final class UtilsModule {
 
     @Provides
     @Singleton
-    ErrorMessageFactory provideErrorMessageFactory(ErrorMessageFactoryImpl errorMessageFactory){
+    ErrorMessageFactory provideErrorMessageFactory(ErrorMessageFactoryImpl errorMessageFactory) {
         return errorMessageFactory;
     }
 }
