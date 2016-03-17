@@ -3,7 +3,8 @@ package hr.pyro.chuckjokes.presentation.view.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import java.util.List;
@@ -40,6 +41,11 @@ public final class FavoriteJokesActivity extends InjectorActivity implements Jok
     protected ListView favoriteListView;
 
 
+    @Bind(R.id.progress_view)
+    protected FrameLayout progressBar;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +71,7 @@ public final class FavoriteJokesActivity extends InjectorActivity implements Jok
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == JokeDetailsActivity.FAVORITE_TOOGLED) {
+        if (resultCode == JokeDetailsActivity.FAVORITE_TOGGLED) {
             presenter.requestFavoriteJokes();
         }
     }
@@ -77,16 +83,15 @@ public final class FavoriteJokesActivity extends InjectorActivity implements Jok
 
     @Override
     public void showLoading() {
-
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void showError(final String errorMessage) {
-        Log.e(TAG, errorMessage);
     }
 }

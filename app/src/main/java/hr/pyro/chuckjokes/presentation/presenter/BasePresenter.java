@@ -1,5 +1,6 @@
 package hr.pyro.chuckjokes.presentation.presenter;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import hr.pyro.chuckjokes.presentation.util.ErrorMessageFactory;
@@ -34,12 +35,20 @@ public abstract class BasePresenter extends SubscribingPresenter {
     protected void responseError(final Throwable error) {
         Log.e(TAG, "An error occurred in the presenter. ", error);
         hideLoadingView();
+        showError(errorMessageFactory.createMessageForError(error));
     }
 
     private void hideLoadingView() {
         final BaseView view = getView();
         if (view != null) {
             view.hideLoading();
+        }
+    }
+
+    private void showError(final String errorMessage) {
+        final BaseView view = getView();
+        if (view != null && !TextUtils.isEmpty(errorMessage)) {
+            view.showError(errorMessage);
         }
     }
 

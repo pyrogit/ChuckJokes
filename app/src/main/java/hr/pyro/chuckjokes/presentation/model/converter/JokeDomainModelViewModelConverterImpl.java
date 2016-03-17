@@ -13,10 +13,6 @@ import hr.pyro.chuckjokes.presentation.model.JokeViewModel;
  */
 public final class JokeDomainModelViewModelConverterImpl implements JokeDomainModelViewModelConverter {
 
-    //    @Inject//TODO
-    public JokeDomainModelViewModelConverterImpl() {
-    }
-
     @Override
     public JokeViewModel domainModelToViewModel(final JokeDomainModel jokeDomainModel) {
         if (jokeDomainModel == null || JokeDomainModel.EMPTY.equals(jokeDomainModel)) {

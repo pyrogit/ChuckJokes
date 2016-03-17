@@ -8,7 +8,7 @@ import hr.pyro.chuckjokes.presentation.di.component.application.ApplicationCompo
 /**
  * Created on 02.03.16..
  */
-public class ChuckJokeApplication extends Application {
+public final class ChuckJokeApplication extends Application {
 
     private static ChuckJokeApplication instance = null;
     private ApplicationComponent applicationComponent;

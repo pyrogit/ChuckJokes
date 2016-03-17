@@ -15,7 +15,7 @@ public interface JokeRepository {
 
     Observable<List<JokeDomainModel>> fetchFavoriteJokes();
 
-    Observable<Long> addJoke(JokeDomainModel jokeDomainModel);
+    Observable<Long> addJokeToFavorites(JokeDomainModel jokeDomainModel);
 
     Observable<Integer> deleteJoke(JokeDomainModel jokeDomainModel);
 

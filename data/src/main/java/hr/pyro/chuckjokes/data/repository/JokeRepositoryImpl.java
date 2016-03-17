@@ -33,19 +33,19 @@ public final class JokeRepositoryImpl implements JokeRepository {
 
     @Override
     public Observable<JokeDomainModel> fetchRandomJoke() {
-        return jokeApiDataStore.getRandomJoke().map(entity ->
-                jokeDataEntityDomainModelMapper.transformFromApiEntityToModel(entity));
+        return jokeApiDataStore.getRandomJoke().map(
+                jokeDataEntityDomainModelMapper::transformFromApiEntityToModel);
     }
 
     @Override
     public Observable<List<JokeDomainModel>> fetchFavoriteJokes() {
-        return jokeDBDataStore.getFavoriteJokes().map(entities ->
-                jokeDataEntityDomainModelMapper.transformFromEntityToModel(entities));
+        return jokeDBDataStore.getFavoriteJokes().map(
+                jokeDataEntityDomainModelMapper::transformFromEntityToModel);
     }
 
     @Override
-    public Observable<Long> addJoke(JokeDomainModel jokeDomainModel) {
-        return jokeDBDataStore.insertJoke(jokeDomainModel.id, jokeDomainModel.joke, true);//TODO
+    public Observable<Long> addJokeToFavorites(JokeDomainModel jokeDomainModel) {
+        return jokeDBDataStore.insertJoke(jokeDomainModel.id, jokeDomainModel.joke, true);
     }
 
     @Override
@@ -55,7 +55,7 @@ public final class JokeRepositoryImpl implements JokeRepository {
 
     @Override
     public Observable<JokeDomainModel> fetchJoke(final int id) {
-        return jokeDBDataStore.getJoke(id).map(entity ->
-                jokeDataEntityDomainModelMapper.transformFromEntityToModel(entity));
+        return jokeDBDataStore.getJoke(id).map(
+                jokeDataEntityDomainModelMapper::transformFromEntityToModel);
     }
 }

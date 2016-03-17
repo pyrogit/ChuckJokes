@@ -3,9 +3,9 @@ package hr.pyro.chuckjokes.presentation.view.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import javax.inject.Inject;
@@ -24,7 +24,7 @@ import hr.pyro.chuckjokes.presentation.view.DetailsJokeView;
  */
 public final class JokeDetailsActivity extends InjectorActivity implements DetailsJokeView {
 
-    public final static int FAVORITE_TOOGLED = 8888;
+    public final static int FAVORITE_TOGGLED = 8888;
 
     private final static String TAG = JokeDetailsActivity.class.getName();
     private static String JOKE_ID_EXTRA = "jokeid";
@@ -39,13 +39,13 @@ public final class JokeDetailsActivity extends InjectorActivity implements Detai
     DetailsJokePresenter presenter;
 
     @Bind(R.id.random_joke_favorite)
-    ImageView favoriteButton;
+    protected ImageView favoriteButton;
 
     @Bind(R.id.random_joke_text)
-    TextView jokeText;
+    protected TextView jokeText;
 
-    @Bind(R.id.progress_bar)
-    ProgressBar progressBar;
+    @Bind(R.id.progress_view)
+    protected FrameLayout progressBar;
 
     private JokeViewModel joke = JokeViewModel.EMPTY;
     private boolean isFavoriteToggled = false;
@@ -75,7 +75,7 @@ public final class JokeDetailsActivity extends InjectorActivity implements Detai
     @Override
     public void onBackPressed() {
         if (isFavoriteToggled) {
-            setResult(FAVORITE_TOOGLED);
+            setResult(FAVORITE_TOGGLED);
         }
         super.onBackPressed();
     }
@@ -98,9 +98,9 @@ public final class JokeDetailsActivity extends InjectorActivity implements Detai
 
     private void toggleFavorite(final boolean isFavorite) {
         if (isFavorite) {
-            favoriteButton.setImageResource(R.drawable.ic_favourite_positive);
+            favoriteButton.setImageResource(R.drawable.ic_favorite_positive);
         } else {
-            favoriteButton.setImageResource(R.drawable.ic_favourite_negative);
+            favoriteButton.setImageResource(R.drawable.ic_favorite_negative);
         }
     }
 
@@ -113,16 +113,15 @@ public final class JokeDetailsActivity extends InjectorActivity implements Detai
 
     @Override
     public void showLoading() {
-
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
-
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void showError(String errorMessage) {
-        Log.e(TAG, errorMessage);
     }
 }

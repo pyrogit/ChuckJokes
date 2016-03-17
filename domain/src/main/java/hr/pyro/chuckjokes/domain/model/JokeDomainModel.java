@@ -18,22 +18,6 @@ public final class JokeDomainModel {
         this.joke = builder.joke;
         this.isFavorite = builder.isFavorite;
     }
-//
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public String getJoke() {
-//        return joke;
-//    }
-//
-//    public boolean isFavorite() {//TODO
-//        return isFavorite;
-//    }
-//
-//    public void setIsFavored(boolean isFavored) {
-//        this.isFavorite = isFavored;
-//    }
 
     public static JokeDomainModel.Builder create() {
         return new JokeDomainModel.Builder();

@@ -9,6 +9,8 @@
     <dimen name="favorite_icon_height_width_random_joke">40dp</dimen>
     <dimen name="favorite_icon_margin_random_joke">5dp</dimen>
     <dimen name="random_button_width_random_joke">50dp</dimen>
+    <dimen name="random_button_margin_random_joke">5dp</dimen>
+    <dimen name="my_favorite_button_height_random_joke">40dp</dimen>
     <dimen name="random_button_height_random_joke">30dp</dimen>
     <dimen name="chuck_image_height_random_joke">240dp</dimen>
     <dimen name="joke_text_margin_item_favorite_joke">20dp</dimen>

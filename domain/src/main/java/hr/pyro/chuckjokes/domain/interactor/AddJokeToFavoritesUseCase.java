@@ -19,7 +19,7 @@ public final class AddJokeToFavoritesUseCase implements UseCaseWithParameter<Lon
     }
 
     @Override
-    public Observable<Long> execute(JokeDomainModel jokeDomainModel) {
-        return this.jokeRepository.addJoke(jokeDomainModel);//TODO
+    public Observable<Long> execute(JokeDomainModel joke) {
+        return this.jokeRepository.addJokeToFavorites(joke);
     }
 }

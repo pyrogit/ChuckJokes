@@ -12,7 +12,7 @@ import hr.pyro.chuckjokes.presentation.view.activity.JokeDetailsActivity;
 /**
  * Created on 13.03.16..
  */
-public class RouterImpl implements Router {
+public final class RouterImpl implements Router {
 
     private final Context context;
 

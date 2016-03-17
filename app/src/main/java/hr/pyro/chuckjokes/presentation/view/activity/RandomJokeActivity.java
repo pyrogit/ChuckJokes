@@ -1,11 +1,11 @@
 package hr.pyro.chuckjokes.presentation.view.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -29,13 +29,13 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
     RandomJokePresenter presenter;
 
     @Bind(R.id.random_joke_favorite)
-    ImageView favoriteButton;
+    protected ImageView favoriteButton;
 
     @Bind(R.id.random_joke_text)
-    TextView jokeText;
+    protected TextView jokeText;
 
-    @Bind(R.id.progress_bar)
-    ProgressBar progressBar;
+    @Bind(R.id.progress_view)
+    protected FrameLayout progressBar;
 
     private JokeViewModel joke = JokeViewModel.EMPTY;
 
@@ -88,9 +88,9 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
 
     private void toggleFavorite(final boolean isFavorite) {
         if (isFavorite) {
-            favoriteButton.setImageResource(R.drawable.ic_favourite_positive);
+            favoriteButton.setImageResource(R.drawable.ic_favorite_positive);
         } else {
-            favoriteButton.setImageResource(R.drawable.ic_favourite_negative);
+            favoriteButton.setImageResource(R.drawable.ic_favorite_negative);
         }
     }
 
@@ -102,8 +102,7 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
 
     @Override
     public void showLoading() {
-        progressBar.setVisibility(View.VISIBLE);//TODO fix progressbar
-        Log.d("PROGRESS", "VISIBLE");
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -113,6 +112,6 @@ public final class RandomJokeActivity extends InjectorActivity implements Random
 
     @Override
     public void showError(String errorMessage) {
-        Log.e(TAG, errorMessage);
+        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
     }
 }

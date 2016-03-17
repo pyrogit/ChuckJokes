@@ -16,11 +16,6 @@ import rx.Observable;
  */
 public final class JokeDBDataStoreImpl extends Dao implements JokeDBDataStore {
 
-    /**
-     * Create here the database table for the given dao
-     *
-     * @param database
-     */
     @Override
     public void createTable(SQLiteDatabase database) {
         CREATE_TABLE(JokeEntity.TABLE_NAME, JokeEntity.COLUMN_ID + " INTEGER PRIMARY KEY NOT NULL",
@@ -61,7 +56,6 @@ public final class JokeDBDataStoreImpl extends Dao implements JokeDBDataStore {
                 .run().mapToList(JokeEntityMapper.MAPPER);
     }
 
-    //TODO rename metodu, pocisti malo, dodaj update, brisem i dodajem preko varijabli il entity ?
     @Override
     public Observable<Long> insertJoke(final int id, final String joke, final boolean isFavorite) {
         ContentValues values = JokeEntityMapper.contentValues()

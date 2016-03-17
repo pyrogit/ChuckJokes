@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Chuck Jokes</string>
+    <string name="my_favorite">My Favorites</string>
+    <string name="check_internet">An error occurred, please check if you are connected to the Internet.</string>
 </resources>

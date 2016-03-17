@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import hr.pyro.chuckjokes.domain.interactor.AddJokeToFavoritesUseCase;
 import hr.pyro.chuckjokes.domain.interactor.DeleteJokeUseCase;
 import hr.pyro.chuckjokes.domain.interactor.FetchRandomJokeUseCase;
-import hr.pyro.chuckjokes.domain.model.JokeDomainModel;
 import hr.pyro.chuckjokes.presentation.di.qualifier.ForActivity;
 import hr.pyro.chuckjokes.presentation.model.JokeViewModel;
 import hr.pyro.chuckjokes.presentation.model.converter.JokeDomainModelViewModelConverter;
@@ -64,14 +63,14 @@ public final class RandomJokePresenterImpl extends BasePresenter implements Rand
 
     private void renderJoke(@NonNull final JokeViewModel joke) {
         final RandomJokeView view = getView();
-        if (view != null && !JokeDomainModel.EMPTY.equals(joke)) {
+        if (view != null && !JokeViewModel.EMPTY.equals(joke)) {
             view.renderJoke(joke);
         }
     }
 
     @Override
     public void addToFavorites(@NonNull final JokeViewModel joke) {
-        if (!JokeDomainModel.EMPTY.equals(joke)) {
+        if (!JokeViewModel.EMPTY.equals(joke)) {
             addSubscription(Observable.defer(() ->
                     addJokeToFavoritesUseCase.execute(
                             converter.viewModelToDomainModel(joke)))
@@ -87,7 +86,7 @@ public final class RandomJokePresenterImpl extends BasePresenter implements Rand
 
     @Override
     public void removeFromFavorites(@NonNull final JokeViewModel joke) {
-        if (!JokeDomainModel.EMPTY.equals(joke)) {
+        if (!JokeViewModel.EMPTY.equals(joke)) {
             addSubscription(Observable.defer(() ->
                     deleteJokeUseCase.execute(
                             converter.viewModelToDomainModel(joke)))
@@ -108,7 +107,7 @@ public final class RandomJokePresenterImpl extends BasePresenter implements Rand
 
     @Override
     public void activate(final RandomJokeView view) {
-        this.view = new WeakReference<RandomJokeView>(view);
+        this.view = new WeakReference<>(view);
     }
 
     private void addedToFavorites(final Long id) {
